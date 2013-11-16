@@ -9,29 +9,29 @@ var startTime:int;
 var timer1:int;
 
 
-var Stuff : Transform;
-var temp = GameObject.Instantiate(Stuff);
+var SeedlingImg : Transform;
+var tempSeedling = GameObject.Instantiate(SeedlingImg);
+
+var PeachImg : Transform;
+var tempPeach = GameObject.Instantiate(PeachImg);
+
+var AppleImg : Transform;
+var tempApple = GameObject.Instantiate(AppleImg);
+
+var HoneydewImg : Transform;
+var tempHoneydew = GameObject.Instantiate(HoneydewImg);
+
+var WatermelonImg : Transform;
+var tempWatermelon = GameObject.Instantiate(WatermelonImg);
+
+var StrawberryImg : Transform;
+var tempStrawberry = GameObject.Instantiate(StrawberryImg);
+
+var PomegranateImg : Transform;
+var tempPomegranate = GameObject.Instantiate(PomegranateImg);
 
 
-var Harvest : Transform;
-var tempHarvest = GameObject.Instantiate(Harvest);
-
-
-
-/*
-function OnGUI () {
-	if(readytocollect == true)
-	{
-		if (GUI.Button(Rect(200,200,200,30),"Please collect the coins"))
-	 	{
-	    	readytocollect = false;
-	    	Destroy(temp.gameObject);
-	    	PlayerCounter.addCoin(money);
-	    	Debug.Log("You have " + PlayerCounter.coinCounter + " coins");
-	    }
-	}
-}*/
-     
+var planttype;
      
 function Update () {
 
@@ -41,7 +41,45 @@ function Update () {
 		&& readytocollect == true && planted == false) {
 		Debug.Log("testingtesting");
 		readytocollect = false;
-    	Destroy(tempHarvest.gameObject);
+		
+		
+		
+		
+		if(planttype.Equals("peach"))
+		{
+			Destroy(tempPeach.gameObject);
+		}
+		
+		if(planttype.Equals("apple"))
+		{
+			Destroy(tempApple.gameObject);
+		}
+		
+		if(planttype.Equals("honeydew"))
+		{
+			Destroy(tempHoneydew.gameObject);
+		}
+		
+		if(planttype.Equals("watermelon"))
+		{
+			Destroy(tempWatermelon.gameObject);
+		}						
+
+		if(planttype.Equals("strawberry"))
+		{
+			Destroy(tempStrawberry.gameObject);
+		}		
+
+		if(planttype.Equals("pomegranate"))
+		{
+			Destroy(tempPomegranate.gameObject);
+		}	
+		
+		
+		
+		
+		
+    	
     	PlayerCounter.addCoin(money);
     	Debug.Log("You have " + PlayerCounter.coinCounter + " coins");
 	}
@@ -64,12 +102,13 @@ function Update () {
 					
 			time = plant0.duration;
 			money = plant0.income;
+			planttype = plant0.type;
 			Debug.Log(plant0.type);
 			planted = true;
 			startTime = Time.time; //time starter
-			var seedling = GameObject.Instantiate(Stuff);
-			seedling.transform.position = Vector3 (transform.position.x, 1, 0);
-			temp = seedling;
+			var temp = GameObject.Instantiate(SeedlingImg);
+			temp.transform.position = Vector3 (transform.position.x, 1, 0);
+			tempSeedling = temp;
 			//Debug.Log(transform.position.x + " " + transform.position.y);
 		}
 
@@ -85,10 +124,53 @@ function Update () {
 		readytocollect = true;
 		
 		
-		Destroy(temp.gameObject);
+		Destroy(tempSeedling.gameObject);
+		if(planttype.Equals("peach"))
+		{
+			Debug.Log(planttype);
+			var temp1 = GameObject.Instantiate(PeachImg);
+			temp1.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempPeach = temp1;
+		}
 		
-		var grown = GameObject.Instantiate(Harvest);
-		grown.transform.position = Vector3 (transform.position.x, 1.5, 0);
-		tempHarvest = grown;
+		if(planttype.Equals("apple"))
+		{
+			Debug.Log(planttype);
+			var temp2 = GameObject.Instantiate(AppleImg);
+			temp2.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempApple = temp2;
+		}
+		
+		if(planttype.Equals("honeydew"))
+		{
+			Debug.Log(planttype);
+			var temp3 = GameObject.Instantiate(HoneydewImg);
+			temp3.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempHoneydew = temp3;
+		}
+		
+		if(planttype.Equals("watermelon"))
+		{
+			Debug.Log(planttype);
+			var temp4 = GameObject.Instantiate(WatermelonImg);
+			temp4.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempWatermelon = temp4;
+		}						
+
+		if(planttype.Equals("strawberry"))
+		{
+			Debug.Log(planttype);
+			var temp5 = GameObject.Instantiate(StrawberryImg);
+			temp5.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempStrawberry = temp5;
+		}		
+
+		if(planttype.Equals("pomegranate"))
+		{
+			Debug.Log(planttype);
+			var temp6 = GameObject.Instantiate(PomegranateImg);
+			temp6.transform.position = Vector3 (transform.position.x, 1.5, 0);
+			tempPomegranate = temp6;
+		}		
 	}
 }
