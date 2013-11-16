@@ -1,37 +1,19 @@
 ﻿#pragma strict
+
+//Plant class
 public class Plant extends MonoBehaviour{
 
 	public var quantity:int;
 	public var type;
-	public var timer;
+	public var duration;
 	public var income;
 	
-	public function Plant(type, quantity : int)
+	public function Plant(type, quantity : int, duration : int, income : int)
 	{
 		this.type = type;
 		this.quantity = quantity;
-		this.timer = timer;
+		this.duration = duration;
 		this.income = income;
 	}
 }
 
-/*
-static var peach = new Plant();
-peach.name = "peach";
-peach.quantity = 5;
-
-
-static var ListPlants= new Array();
-ListPlants[0] = peach;
-
-*/
-
-
-/*
-function Start () {
-
-}
-
-function Update () {
-	Debug.Log(peach.name + " has " + peach.quantity);
-}*/

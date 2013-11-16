@@ -5,22 +5,22 @@ static var seed;
 static var picked : boolean;
 
 function Start () {
-	var peach = Plant("peach", 5);
+	var peach = Plant("peach", 5, 2, 100);
 	PlantArray[0] = peach;
 
-	var apple = Plant("apple", 0);
+	var apple = Plant("apple", 0, 3, 200);
 	PlantArray[1] = apple;	
 
-	var honeydew = Plant("honeydew", 1);
+	var honeydew = Plant("honeydew", 1, 4, 300);
 	PlantArray[2] = honeydew;	
 	
-	var watermelon = Plant("watermelon", 1);
+	var watermelon = Plant("watermelon", 1, 5, 400);
 	PlantArray[3] = watermelon;	
 
-	var strawberry = Plant("strawberry", 1);
+	var strawberry = Plant("strawberry", 1, 6, 500);
 	PlantArray[4] = strawberry;	
 	
-	var pomegranate = Plant("pomegranate", 1);
+	var pomegranate = Plant("pomegranate", 1, 7, 600);
 	PlantArray[5] = pomegranate;			
 	//Debug.Log(PlantArray[0].testing());
 	
@@ -54,10 +54,4 @@ function OnGUI(){
 			count ++;
 		}
 	}
-
-	
-	//Plant.ListPlants[0].name;
-	//Debug.Log(PlantArray[0].GetType);
-
-	
 }
