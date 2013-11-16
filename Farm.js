@@ -13,7 +13,8 @@ var Stuff : Transform;
 var temp = GameObject.Instantiate(Stuff);
 
 
-//var Harvest : Transform;
+var Harvest : Transform;
+var tempHarvest = GameObject.Instantiate(Harvest);
 
 
 
@@ -40,7 +41,7 @@ function Update () {
 		&& readytocollect == true && planted == false) {
 		Debug.Log("testingtesting");
 		readytocollect = false;
-    	Destroy(temp.gameObject);
+    	Destroy(tempHarvest.gameObject);
     	PlayerCounter.addCoin(money);
     	Debug.Log("You have " + PlayerCounter.coinCounter + " coins");
 	}
@@ -66,7 +67,9 @@ function Update () {
 			Debug.Log(plant0.type);
 			planted = true;
 			startTime = Time.time; //time starter
-			
+			var seedling = GameObject.Instantiate(Stuff);
+			seedling.transform.position = Vector3 (transform.position.x, 1, 0);
+			temp = seedling;
 			//Debug.Log(transform.position.x + " " + transform.position.y);
 		}
 
@@ -81,9 +84,11 @@ function Update () {
 		planted = false;
 		readytocollect = true;
 		
-		var seedling = GameObject.Instantiate(Stuff);
-		seedling.transform.position = Vector3 (transform.position.x, 2, 0);
-		temp = seedling;
-		//Destroy(temp.gameObject);
+		
+		Destroy(temp.gameObject);
+		
+		var grown = GameObject.Instantiate(Harvest);
+		grown.transform.position = Vector3 (transform.position.x, 1.5, 0);
+		tempHarvest = grown;
 	}
 }
