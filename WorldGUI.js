@@ -51,6 +51,12 @@ function OnGUI(){
 				picked = true;
 				Debug.Log(plant0.type);
 			}
+			else if(count == 0)
+			{
+				seed = plant0;
+				picked = true;
+				Debug.Log(plant0.type);
+			}
 			count ++;
 		}
 	}
